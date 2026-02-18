@@ -50,6 +50,11 @@ Defined in `backend/routes/api.php`.
   - Marks a request as assigned.
 - `DELETE /api/requests/{towingRequest}`
   - Deletes a request.
+- `POST /api/auth/validate`
+  - Validates a name/role pair and blocks cross-role duplicates.
+  - Body:
+    - `name` (string, required)
+    - `role` (`driver` or `customer`, required)
 
 ### Data model
 `backend/app/Models/TowingRequest.php` fields:
@@ -57,6 +62,10 @@ Defined in `backend/routes/api.php`.
 - `location`
 - `note` (nullable)
 - `status` (default: `pending`)
+
+`backend/app/Models/User.php` fields:
+- `name`
+- `role`
 
 ## Web (React)
 

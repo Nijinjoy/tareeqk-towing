@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { createRequest } from './api.js';
+import { createRequest, validateUser } from './api.js';
 
 const initialForm = {
   customer_name: '',
@@ -43,13 +43,19 @@ export default function App() {
       return;
     }
 
-    setUser({
-      name: trimmedName,
-      phone: loginForm.phone.trim(),
-      role: loginForm.role,
-    });
-    setLoginError('');
-    setForm((prev) => ({ ...prev, customer_name: trimmedName }));
+    validateUser({ name: trimmedName, role: loginForm.role })
+      .then(() => {
+        setUser({
+          name: trimmedName,
+          phone: loginForm.phone.trim(),
+          role: loginForm.role,
+        });
+        setLoginError('');
+        setForm((prev) => ({ ...prev, customer_name: trimmedName }));
+      })
+      .catch((error) => {
+        setLoginError(error.message || 'Unable to validate name.');
+      });
   };
 
   const onLogout = () => {

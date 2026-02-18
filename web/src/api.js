@@ -13,3 +13,19 @@ export async function createRequest(payload) {
 
   return response.json();
 }
+
+export async function validateUser(payload) {
+  const response = await fetch(`${API_BASE_URL}/auth/validate`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
+  });
+
+  if (!response.ok) {
+    const error = await response.json().catch(() => ({}));
+    const message = error?.message || 'Unable to validate name.';
+    throw new Error(message);
+  }
+
+  return response.json();
+}
