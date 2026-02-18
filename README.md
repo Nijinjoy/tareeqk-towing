@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Tareeqk Towing Request System
 
 A lightweight full-stack towing request system:
@@ -77,8 +76,8 @@ The web app runs at the Vite dev URL and uses the API at:
 
 ### Usage
 - Sign in as `customer` or `driver`.
-- Customers can submit towing requests and only see their own requests in the Requests tab.
-- Drivers see all requests and can assign/delete.
+- Customers can submit towing requests.
+- Drivers see a placeholder console view.
 
 ## Mobile (React Native CLI)
 
@@ -105,8 +104,7 @@ API configuration is in `app/src/services/requests.ts`:
 
 ### Usage
 - Sign in as `customer` or `driver`.
-- Customers only see their own submitted requests in the Requests tab.
-- Drivers see all requests and can assign/delete.
+- The Requests tab shows live updates and supports assign/delete.
 
 ## Common issues
 - If deletes reappear, confirm the API responds `204` to `DELETE /api/requests/{id}`.
@@ -115,6 +113,5 @@ API configuration is in `app/src/services/requests.ts`:
 ## Notes
 - There is no real authentication; login is a local role selector for UI flow.
 - You can extend the API with auth, users, or real-time updates as needed.
-=======
+
 # tareeqk-towing
->>>>>>> 41125093d7cf113a63bd11bb7777c4e9a66784c3
