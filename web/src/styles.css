@@ -1,0 +1,230 @@
+:root {
+  --bg: #f7f3ef;
+  --card: #ffffff;
+  --ink: #1b1b1d;
+  --accent: #f15a24;
+  --accent-dark: #b4441b;
+  --muted: #6b6b6f;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at top left, #fff1e8 0%, var(--bg) 45%, #efe7e1 100%);
+  color: var(--ink);
+  min-height: 100vh;
+}
+
+.page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px 64px;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+h1 {
+  font-size: 44px;
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+
+.subhead {
+  color: var(--muted);
+  max-width: 480px;
+}
+
+.badge {
+  background: var(--accent);
+  color: white;
+  padding: 12px 18px;
+  border-radius: 999px;
+  font-weight: 600;
+  box-shadow: 0 10px 20px rgba(241, 90, 36, 0.25);
+}
+
+.card {
+  background: var(--card);
+  border-radius: 20px;
+  padding: 28px 32px;
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.08);
+}
+
+.account-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #eee6df;
+  margin-bottom: 18px;
+}
+
+.account-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.account-pill {
+  background: #fff0e7;
+  color: var(--accent-dark);
+  text-transform: capitalize;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+
+.account-name {
+  font-weight: 600;
+}
+
+.account-phone {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.card h2 {
+  margin-bottom: 18px;
+}
+
+.form {
+  display: grid;
+  gap: 14px;
+}
+
+.login-form {
+  margin-top: 12px;
+}
+
+.role-toggle {
+  display: flex;
+  gap: 12px;
+}
+
+.role-button {
+  flex: 1;
+  border: 1px solid #eadfd7;
+  background: white;
+  color: var(--muted);
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: border 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+
+.role-button.active {
+  border-color: var(--accent);
+  color: var(--accent-dark);
+  background: #fff4ef;
+  font-weight: 600;
+}
+
+label {
+  display: grid;
+  gap: 6px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+input,
+textarea {
+  border: 1px solid #e0d9d2;
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 15px;
+}
+
+button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+button:disabled {
+  background: #f3b39b;
+  cursor: not-allowed;
+}
+
+button:not(:disabled):hover {
+  background: var(--accent-dark);
+  transform: translateY(-1px);
+}
+
+.secondary {
+  background: #f1e6de;
+  color: var(--accent-dark);
+}
+
+.secondary:hover {
+  background: #e7d6cc;
+}
+
+.status {
+  margin-top: 16px;
+  color: var(--accent-dark);
+  font-weight: 600;
+}
+
+.status.error {
+  color: #b42318;
+}
+
+.driver-panel {
+  display: grid;
+  gap: 16px;
+}
+
+.driver-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.driver-card {
+  border-radius: 16px;
+  padding: 16px;
+  background: #fff4ef;
+  border: 1px solid #f5d8c8;
+}
+
+.driver-card h3 {
+  margin-bottom: 6px;
+}
+
+@media (max-width: 720px) {
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  h1 {
+    font-size: 34px;
+  }
+}
