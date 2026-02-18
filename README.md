@@ -10,7 +10,7 @@ This repo is intentionally minimal and meant to be easy to run locally or extend
 ## Repository layout
 - `backend/` Laravel API
 - `web/` React (Vite) web client
-- `app/` React Native client
+- `app/` mobile app
 
 ## Backend (Laravel)
 
