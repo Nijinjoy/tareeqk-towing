@@ -19,7 +19,7 @@ This repo is intentionally minimal and meant to be easy to run locally or extend
 - Composer
 - MySQL (or compatible database)
 
-### Setup
+### Install & run
 ```bash
 cd backend
 composer install
@@ -64,7 +64,7 @@ Defined in `backend/routes/api.php`.
 - Node.js 18+
 - npm
 
-### Setup
+### Install & run
 ```bash
 cd web
 npm install
@@ -79,20 +79,23 @@ The web app runs at the Vite dev URL and uses the API at:
 - Customers can submit towing requests.
 - Drivers see a placeholder console view.
 
-## Mobile (React Native)
+## Mobile (React Native CLI)
 
 ### Requirements
 - Node.js 18+
 - npm
-- iOS/Android simulator or device
+- Xcode (for iOS)
+- Android Studio + SDK (for Android)
 
-### Setup
+### Install & run
 ```bash
 cd app
 npm install
-npm run ios
-# or
-npm run android
+cd ios
+pod install
+cd ..
+npx react-native run-android
+npx react-native run-ios
 ```
 
 API configuration is in `app/src/services/requests.ts`:
